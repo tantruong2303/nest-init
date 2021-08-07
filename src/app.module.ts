@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserModule } from './user/user.module';
+import { User } from './user/entities/user.entity';
 
 const Config = ConfigModule.forRoot({
       isGlobal: true,
@@ -18,7 +20,7 @@ const DBConfig = TypeOrmModule.forRoot({
       database: process.env.DB_NAME,
       synchronize: true,
       keepConnectionAlive: true,
-      entities: [],
+      entities: [User],
       extra: { connectionLimit: 1 },
       options: {
             encrypt: false,
@@ -26,7 +28,7 @@ const DBConfig = TypeOrmModule.forRoot({
 });
 
 @Module({
-      imports: [Config, DBConfig],
+      imports: [Config, DBConfig, UserModule],
       controllers: [AppController],
       providers: [AppService],
 })
