@@ -1,0 +1,12 @@
+{
+      "error.invalid-input": "input không hợp lệ",
+      "string.base": "là một chuỗi kí tự",
+      "string.min": "sử dụng {#limit} ký tự trở lên",
+      "string.max": "sử dụng {#limit} ký tự trở xuống",
+      "string.alphanum": "bao gồm cả chữ và số",
+      "string.email": "email không hợp lệ",
+      "string.pattern.base": "theo mẫu",
+      "number.base": "là chữ số",
+      "number.min": "sử dụng số lớn hơn hoặc bằng {#limit}",
+      "number.max": "sử dụng số bé hơn hoặc bằng {#limit}"
+}
