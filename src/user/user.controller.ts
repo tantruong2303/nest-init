@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './entities/user.entity';
 
-import { apiResponse } from 'src/app/interface/apiResponse';
+import { apiResponse } from '../app/interface/apiResponse';
 
 @Controller('user')
 export class UserController {
@@ -11,7 +11,7 @@ export class UserController {
       @Get('/test')
       async test() {
             const user = new User();
-            user.username = 'test';
+            user.email = 'test';
             user.name = 'Test';
             user.password = '123';
             await this.userService.saveUser(user);
